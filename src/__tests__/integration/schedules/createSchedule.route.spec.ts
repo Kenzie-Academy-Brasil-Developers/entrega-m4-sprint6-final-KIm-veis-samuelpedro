@@ -2,7 +2,9 @@ import supertest from 'supertest';
 import { DataSource, DeepPartial } from 'typeorm';
 import app from '../../../app';
 import { AppDataSource } from '../../../data-source';
-import { RealEstate, Schedule, User } from '../../../entities';
+import RealEstate from '../../../entities/RealEstate.entity';
+import { User } from '../../../entities/User.entity';
+import Schedule from '../../../entities/Schedule.entity';
 import {
   createScheduleRouteMock,
   createUserRouteMock,

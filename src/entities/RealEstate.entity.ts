@@ -21,7 +21,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn
     createdAt: string;
 
     @UpdateDateColumn({ type: 'date'})
-    updateAt: string;
+    updatedAt: string;
 
     @OneToMany(() => Schedule, (schedule) => schedule.realEstate)
     schedules: Schedule[];

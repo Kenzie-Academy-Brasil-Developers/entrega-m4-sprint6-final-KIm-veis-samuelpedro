@@ -3,9 +3,9 @@ import { createRealEstateService, readRealEstateService } from "../services/real
 
 
 export const createRealEstateController = async (req: Request, res: Response): Promise<Response> => {
-    const clinic = await createRealEstateService(req.body)
+    const realEstate = await createRealEstateService(req.body)
 
-    return res.status(201).json(clinic)
+    return res.status(201).json(realEstate)
 }
 
 export const readAllRealEstateController = async (req: Request, res: Response): Promise<Response> => {
