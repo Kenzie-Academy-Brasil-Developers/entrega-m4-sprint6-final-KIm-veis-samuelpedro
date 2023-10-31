@@ -1,6 +1,7 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { Category } from '../../../entities';
+import { Category } from '../../../entities/Category.entity';
+
 
 type iCategoryRepo = Repository<Category>;
 

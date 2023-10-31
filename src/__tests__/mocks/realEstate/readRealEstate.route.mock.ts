@@ -1,6 +1,8 @@
 import { DeepPartial, Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { Address, RealEstate } from '../../../entities';
+import RealEstate from '../../../entities/RealEstate.entity';
+import { Address } from '../../../entities/Address.entity';
+
 
 type iRealEstateRepo = Repository<RealEstate>;
 type iAddressRepo = Repository<Address>;
@@ -28,7 +30,7 @@ const manyRealStations = async (
     const realEstateVal = Math.random() * 10000000;
     const addressCreate = await addressRepo.save(address);
     manyRealEstate.push({
-      value: parseFloat(realEstateVal.toString()).toFixed(2),
+      value: parseFloat(realEstateVal.toString()) || 0,
       size: Math.ceil(Math.random() * 100),
       address: addressCreate,
     });

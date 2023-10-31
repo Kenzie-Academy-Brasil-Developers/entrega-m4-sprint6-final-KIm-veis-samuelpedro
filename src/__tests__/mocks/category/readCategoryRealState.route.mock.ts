@@ -1,6 +1,9 @@
 import { Repository } from 'typeorm';
 import { AppDataSource } from '../../../data-source';
-import { Address, Category, RealEstate } from '../../../entities';
+import { Category } from '../../../entities/Category.entity';
+import RealEstate from '../../../entities/RealEstate.entity';
+import { Address } from '../../../entities/Address.entity';
+
 
 type iCategoryRepo = Repository<Category>;
 type iRealEstateRepo = Repository<RealEstate>;
@@ -32,7 +35,7 @@ const categoryRealStation = async (): Promise<any> => {
     const realEstateVal = Math.random() * 10000000;
     const addressCreate = await addressRepo.save(address);
     manyRealEstate.push({
-      value: parseFloat(realEstateVal.toString()).toFixed(2),
+      value: parseFloat(realEstateVal.toString()) || 0,
       size: Math.ceil(Math.random() * 100),
       address: addressCreate,
       category: { id: category.id },

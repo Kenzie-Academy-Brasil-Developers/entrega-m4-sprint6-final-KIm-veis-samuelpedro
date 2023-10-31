@@ -2,8 +2,8 @@ import supertest from "supertest";
 import { DataSource, DeepPartial } from "typeorm";
 import app from "../../../app";
 import { AppDataSource } from "../../../data-source";
-import { RealEstate } from "../../../entities";
 import { readRealEstateRouteMock } from "../../mocks";
+import RealEstate from "../../../entities/RealEstate.entity";
 
 describe("GET /realEstate", () => {
   let connection: DataSource;
